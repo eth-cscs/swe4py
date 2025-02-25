@@ -1,0 +1,3 @@
+[submodule "cscs-markdown-slidedeck"]
+	path = cscs-markdown-slidedeck
+	url = https://github.com/kanduri/cscs-markdown-slidedeck
