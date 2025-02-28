@@ -12,11 +12,11 @@ This repo contains the slides and exercises for the internal CSCS course with th
 To get slides as pdf...
 
 ```
-./build/build.sh
+./build.sh
 ```
 
 To serve dynamically for local development or presentation...
 
 ```
-./run.sh
+./serve.sh
 ```

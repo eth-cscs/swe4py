@@ -70,7 +70,7 @@ Do we know each other?
 
 ---
 
-![bg cover](cscs-markdown-slidedeck/common/title-section.jpg)
+![bg cover](cscs-markdown-slidedeck/common/title-section-16-9.jpg)
 <!-- _paginate: skip  -->
 <!-- _class: titlesection -->
 <!-- _footer: "" -->
@@ -81,7 +81,7 @@ Do we know each other?
 
 ---
 
-![bg cover](cscs-markdown-slidedeck/common/title-section.jpg)
+![bg cover](cscs-markdown-slidedeck/common/title-section-16-9.jpg)
 <!-- _paginate: skip  -->
 <!-- _class: titlesection -->
 <!-- _footer: "" -->
@@ -92,7 +92,7 @@ Do we know each other?
 
 ---
 
-![bg cover](cscs-markdown-slidedeck/common/title-section.jpg)
+![bg cover](cscs-markdown-slidedeck/common/title-section-16-9.jpg)
 <!-- _paginate: skip  -->
 <!-- _class: titlesection -->
 <!-- _footer: "" -->
@@ -103,7 +103,7 @@ Do we know each other?
 
 ---
 
-![bg cover](cscs-markdown-slidedeck/common/title-section.jpg)
+![bg cover](cscs-markdown-slidedeck/common/title-section-16-9.jpg)
 <!-- _paginate: skip  -->
 <!-- _class: titlesection -->
 <!-- _footer: "" -->
@@ -135,7 +135,7 @@ Do we know each other?
 
 ---
 
-![bg cover](cscs-markdown-slidedeck/common/title-section.jpg)
+![bg cover](cscs-markdown-slidedeck/common/title-section-16-9.jpg)
 <!-- _paginate: skip  -->
 <!-- _class: titlesection -->
 <!-- _footer: "" -->
@@ -146,7 +146,7 @@ Do we know each other?
 
 ---
 
-![bg cover](cscs-markdown-slidedeck/common/title-section.jpg)
+![bg cover](cscs-markdown-slidedeck/common/title-section-16-9.jpg)
 <!-- _paginate: skip  -->
 <!-- _class: titlesection -->
 <!-- _footer: "" -->
@@ -157,7 +157,7 @@ Do we know each other?
 
 ---
 
-![bg cover](cscs-markdown-slidedeck/common/title-section.jpg)
+![bg cover](cscs-markdown-slidedeck/common/title-section-16-9.jpg)
 <!-- _paginate: skip  -->
 <!-- _class: titlesection -->
 <!-- _footer: "" -->
@@ -168,7 +168,7 @@ Do we know each other?
 
 ---
 
-![bg cover](cscs-markdown-slidedeck/common/title-section.jpg)
+![bg cover](cscs-markdown-slidedeck/common/title-section-16-9.jpg)
 <!-- _paginate: skip  -->
 <!-- _class: titlesection -->
 <!-- _footer: "" -->
