@@ -1,0 +1,8 @@
+[build-system]
+build-backend = "mesonpy"
+requires = ["meson-python"]
+
+[project]
+name = "compilerbackend"
+version = "0.1.0"
+description = "Example using the meson-python backend"

@@ -1,0 +1,15 @@
+[project]
+name = "backend-peek"
+version = "0.1.0"
+dependencies = ["rich"]
+
+[project.scripts]
+hello = "helloworld.main:hello_world"
+
+[build-system]
+requires = ["hatchling"]
+backend-path = ["src"]
+build-backend = "mybuild"
+
+[tool.hatch.build.targets.wheel]
+packages=["src/helloworld"]
