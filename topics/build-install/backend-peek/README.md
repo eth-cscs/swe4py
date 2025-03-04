@@ -17,8 +17,8 @@ Here it is used only for illustrative purposes, hence it will not be explained f
 create a virtualenv and install into it
 
 ```bash
-$ virtualenv .venv
-$ source activate .venv/bin/activate
+$ python -m venv .venv
+$ source .venv/bin/activate
 (venv)$ pip install .
 (venv)$ hello # test the installation
 (venv)$ ls

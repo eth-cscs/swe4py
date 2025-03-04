@@ -17,7 +17,7 @@ The example content is only slightly adapted from the following tutorials:
 #### install in editable mode:
 
 ```bash
-$ virtualenv .venv
+$ python -m venv .venv
 (venv)$ activate .venv/bin/activate
 (venv)$ pip install meson
 (venv)$ pip install -e .
