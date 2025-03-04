@@ -19,25 +19,24 @@ The example content is only slightly adapted from the following tutorials:
 ```bash
 $ python -m venv .venv
 (venv)$ activate .venv/bin/activate
-(venv)$ pip install meson
+(venv)$ pip install meson ninja
 (venv)$ pip install -e .
 (venv)$ python -c "import cppext; print(cppext.add(2, 2))"
 4
 ```
 
-change the extension in `src/cpp_extension.cpp`, for example: make the "add" function be one off (always return +1 of what it should).
+Change the extension in `src/cpp_extension.cpp`, for example: make the "add" function be one off (always return +1 of what it should).
 
-recompile and test
+Test the changes, automatically recompiles.
 
 ```bash
-(venv)$ meson compile -C build
 (venv)$ python -c "import cppext; print(cppext.add(2, 2))"
 5
 ```
 
 #### build for distribution:
 
-with pip or the "build" frontends
+With pip or the "build" frontends:
 
 ```bash
 (venv)$ pip wheel .
@@ -47,14 +46,14 @@ with pip or the "build" frontends
 (venv)$ pip install dist/compilerbackend-0.1.0-<pyversion-os-arch>.whl
 ```
 
-replace the first line with the following to use "build":
+Replace the first line with the following to use "build":
 
 ```bash
 (venv)$ pip install build
 (venv)$ python -m build --wheel .
 ```
 
-also try building source distribution as well
+Also try building source distribution as well:
 
 ```bash
 (venv)$ export CXX=<path-to-c++17-capable GCC>
@@ -66,7 +65,7 @@ also try building source distribution as well
 
 That's right, source distributions for compiled extensions don't actually make any sense!
 
-with `uv` or `hatch`
+With `uv` or `hatch`:
 
 ```bash
 (venv)$ rm -r dist
