@@ -39,7 +39,7 @@ Test the changes, automatically recompiles.
 With pip or the "build" frontends:
 
 ```bash
-(venv)$ pip wheel .
+(venv)$ pip wheel --wheel-dir dist .
 # you should see compiler output here
 (venv)$ ls dist
 # you should see a .whl file here, specifig to your arch, os and python version
@@ -50,27 +50,16 @@ Replace the first line with the following to use "build":
 
 ```bash
 (venv)$ pip install build
-(venv)$ python -m build --wheel .
-```
-
-Also try building source distribution as well:
-
-```bash
 (venv)$ export CXX=<path-to-c++17-capable GCC>
-(venv)$ pip install build
-(venv)$ python -m build . # without --wheel it will try to build both, wheel and sdist
-# you should see compiler output here
-# followed by an error
+(venv)$ python -m build
 ```
-
-That's right, source distributions for compiled extensions don't actually make any sense!
 
 With `uv` or `hatch`:
 
 ```bash
 (venv)$ rm -r dist
-(venv)$ hatch build -t wheel  # note the different CLI API
-(venv)$ #or uv build --wheel
+(venv)$ hatch build  # note the different CLI API
+(venv)$ uv build
 # compiler output
 (venv)$ ls dist
 # .whl file
