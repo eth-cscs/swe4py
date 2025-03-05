@@ -36,6 +36,11 @@ Test the changes, automatically recompiles.
 
 #### build for distribution:
 
+Make sure the build system picks up a C++17 capable compiler
+```bash
+(venv)$ export CXX=<path-to-c++17-capable GCC>
+```
+
 With pip or the "build" frontends:
 
 ```bash
@@ -50,7 +55,6 @@ Replace the first line with the following to use "build":
 
 ```bash
 (venv)$ pip install build
-(venv)$ export CXX=<path-to-c++17-capable GCC>
 (venv)$ python -m build
 ```
 
@@ -58,8 +62,10 @@ With `uv` or `hatch`:
 
 ```bash
 (venv)$ rm -r dist
-(venv)$ hatch build  # note the different CLI API
+(venv)$ pip install uv # if you don't have it installed
 (venv)$ uv build
+(venv)$ pip install hatch # unless you already have hatch installed
+(venv)$ hatch build 
 # compiler output
 (venv)$ ls dist
 # .whl file
@@ -75,6 +81,7 @@ The easiest way is with `uv`
 
 ```bash
 (venv)$ uv build --wheel -p pypy-3.9
+# installs PyPy-3.9 for you and runs build inside an ad-hoc environment
 (venv)$ ls dist
 # this should have built a wheel for version 3.9 of the PyPy interpreter
 ```

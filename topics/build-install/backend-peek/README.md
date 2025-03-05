@@ -49,7 +49,7 @@ How about editable installs?
 (venv)$ pip install -e .
 ```
 
-That's right, editable installs require the optional `build_editable` hook, which we did not wrap in `mybuild.py`. That said, all the popular backends implement this.
+That's right, it fails! Editable installs require the optional `build_editable` hook, which we did not wrap in `mybuild.py`. That said, all the popular backends implement this.
 
 ## Optional Exercise
 
