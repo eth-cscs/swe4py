@@ -18,7 +18,7 @@ The example content is only slightly adapted from the following tutorials:
 
 ```bash
 $ python -m venv .venv
-(venv)$ activate .venv/bin/activate
+$ source .venv/bin/activate
 (venv)$ pip install meson ninja
 (venv)$ pip install -e .
 (venv)$ python -c "import cppext; print(cppext.add(2, 2))"
