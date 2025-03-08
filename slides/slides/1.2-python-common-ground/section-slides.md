@@ -1,5 +1,4 @@
 ---
-background: images/title-bg3.png
 layout: section
 ---
 

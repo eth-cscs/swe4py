@@ -51,7 +51,7 @@ Retrieving notices: ...working... done
   environment location: /opt/anaconda3
 ```
 
-Installs into base conda environment 😢 
+Installs into base conda environment 😢
 Why?
 
 </v-click>
@@ -265,7 +265,7 @@ sp --> pth[".pth files"]
 graph LR
 
 url -->|download| deps
-deps["resolve & install dependencies"] --> build["build wheel if needed"] 
+deps["resolve & install dependencies"] --> build["build wheel if needed"]
 path --> deps
 pypi --> resolve["resolve version"]
 resolve -->|download| deps
@@ -307,7 +307,7 @@ Time to see it in action: Browse to
 <br />
 <br />
 
-Open a code space and head to `exercises/build-install`
+Open a code space and head to `exercises/1-3-build-install`
 (need to be logged in)
 
 or

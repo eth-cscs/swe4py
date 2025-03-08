@@ -1,9 +1,15 @@
 ---
-background: images/title-bg3.png
 layout: section
 ---
 
 # Getting started with Python: Basic environment configuration
+
+---
+
+## Content
+
+- Understanding a Python interpreter
+- Understanding virtual environments
 
 ---
 
@@ -20,14 +26,9 @@ layout: section
     - [GraalPy](https://www.graalvm.org/python/) is part of [GraalVM](https://www.graalvm.org/)
     - Others/unmaintained: IronPython, Jython, [pyston](https://github.com/pyston/pyston)...
     - [Python Interpreters Benchmarks](https://pybenchmarks.org/)
-    - Experimental compiler: [Nuitka]()
+    - Experimental full Python compiler: [Nuitka](https://nuitka.net/)
 
 <!--
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-- Explain the concept of Python as an interpreted language
-- Introduce the main Python interpreters
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
 Python (created by Guido van Rossum in 1989-1991) is an interpreted language, which means that Python programs are not directly translated into binary machine code by the programming language processing tool (usually called *compiler*) at *compilation* time. Therefore, Python programs cannot be distributed as independent executable programs but only as source code files, and require the programming language processing tool (usually called *interpreter*) at run-time.
 
 There are several Python interpreters developed in different programming languages, but the interpreter taken as reference implementation is CPython, written in C (originally used the C89 standard with several select C99 features, from version 3.11 it uses C11). CPython works by translating first the source code into bytecode (cached to the filesystem if possible) and then executing it by the Python stack virtual machine. Note that the bytecode is just an implementation detail and thus it's not guaranteed to be compatible across different versions.
@@ -38,98 +39,112 @@ RustPython:
 
 ---
 
-# Python Interpreter
+# Anatomy of a Python Interpreter (CPython)
 
-cPython
+- CPython actually compiles the source code into bytecode (and caches it) before executing it
 
-
-![alt](./assets/pvm-9-2.png)
+![cpython](./assets/python-interpreter.svg)
 
 ---
 
-# CPython
+# CPython Basics
 
 - `python` | `python3` command
-  - `python3` command was introduced to avoid conflicts with Python 2 since 3.x versions of the language were not backwards compatible
-  - Python 2.x is end-of-life since 2020
-  - Some Linux distributions still use `python3` (e.g. [Ubuntu](https://launchpad.net/ubuntu/focal/+package/python-is-python3)) as the executable
-- `python` ...
+  - `python3` command introduced to avoid conflicts between incompatible versions (Python2 != Python3)
+  - Python 2 is end-of-life since 2020
+  - Many Linux distributions still use `python3` (e.g. [Ubuntu](https://launchpad.net/ubuntu/focal/+package/python-is-python3)) as default command name
+- Importable packages are searched from the list of sources in `sys.path` variable (`python -m site`)
+  - usually: `/<prefix>/lib/pythonX.Y/site-packages`
+  - some distributions use `dist-packages` instead of `site-packages`
+  - if `$PYTHONPATH` (`dir1:dir2:...`) exists, it is prepended to the `sys.path`
+  - if user-specific packages are enabled, they are searched first
+    - `PYTHONNOUSERSITE`: disable user-specific site-packages directory
+    - `PYTHONUSERBASE`: prefix for user-site packages (`$HOME/.local`)
 
-<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-- Explain python vs python2 vs python3 commands
-- Explain basic paths variables for the interpreter to find the distribution packages: PYTHONHOME, PYTHONPATH, PYTHONUSERBASE, PYTHONNOUSERSITE, ...
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 ---
 
-# CPython
+# CPython Usage
 
-```bash
-$ python [options] [script.py]
-```
-- Usage:
-  - script.py : execute script.py as main (adds basedir(script.py) to sys.path)
-  - -c 'python_statement; python_statement;' : execute statements (adds PWD to sys.path)
-  - -m pkg1.sub.module : run module as main (adds PWD to sys.path)
+- Python code can be run in different modes affecting the `sys.path` variable
+- Script mode: `$ python [options] script.py`
+  - `sys.path.insert(0, basedir(script.py))`
+- Module mode (**-m**): `$ python [options] -m package.module_name`
+  - `sys.path.insert(0, $PWD)`
+- Command mode (**-c**): `$ python [options] -c 'python_statement; python_statement'`
+  - `sys.path.insert(0, $PWD)`
+- Note that the same file can be run in different modes depending on the command line
+  - `python ./my_local_source.py` vs `python -m my_local_source`
 
-<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-- Explain cli python command options: -x, -u, -OO ,....
-- Explain difference between python script.py and python -m script.py
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++- -->
+---
+
+# CPython Usage Options
+
+- Some useful options:
+  - `-u` : unbuffered output (stdout, stderr)
+  - `-O` : remove assert and __debug__-dependent statements (`$PYTHONOPTIMIZE=1`)
+  - `-OO` : do -O changes and also discard docstrings (`$PYTHONOPTIMIZE=2`)
+  - `-s` : don't add user site directory to sys.path (`$PYTHONNOUSERSITE`)
+  - `-E` : ignore environment variables like PYTHONPATH
+  - `-I` : isolate Python from the user environment (implies `-E` and `-s`)
+
 ---
 
 # Python Virtual Environments
 
-- A virtual environment is a self-contained directory tree that contains a Python installation for a particular version of Python, plus a number of additional packages...
-- ...that can be installed using the `pip` package manager
-- Virtual environments make it easy to work on multiple projects with different dependencies
-- Activating a virtual environment changes the shell's PATH to make the Python interpreter and the installed packages available
+- A _virtual environment_ (or _venv_) is a self-contained directory tree:
+  - with a Python interpreter
+  - with an independent set of Python packages installed inside the venv tree
+  - disposable (easy to recreate, not checked in VCS)
+  - not movable or copyable
+- Virtual environments isolate the Python infrastucture:
+  - between different projects with different requirements
+  - between the system installation and the project requirements (optional)
+- Virtual environments need to be _activated_ by sourcing an activaction script:
+  - `source myenv/bin/activate`
+  - the activation script usually only changes the shell's environment (e.g. `PATH=myenv/bin:$PATH`)
 
-<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-- Explain what is a virtual environment
-- Explain historic tools: virtualenv, venv, pyenv, ...
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++- -->
 ---
 
-# Environment management (seek for hands-on / interactive stuff for after lunch)
+# Python Virtual Environments are **not** Containers
 
-```bash
-$ python -m venv myenv
-$ which python
-$ source myenv/bin/activate
-$ which python
-$ python -m pip list
-$ python -m pip install --upgrade pip setuptools wheel
-$ python -m pip install 'numpy==1.26.0'
-$ python -m pip install 'numpy==2.1.0'
-```
+- Virtual environments do **not** replace user environment isolation tools
+ (containers, uenvs, ...)
+  - System / user resources outside of the venv tree are not isolated
+  - Environment variables are not isolated
 
-<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-* example of version clash if there's no venvs
-* can you run different python/lib versions
-- **EXERCISE**
-- Create and activate an environment (to use in later exercises)
-- Create 2 different environments with 1 python versions
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++- -->
----
+- Why using venvs if we need another isolation layer anyway?
+  - Lightweight and very easy to bootstrap
+  - Very well integrated with Python tools
+  - Convenient for development and testing with different Python versions
+  - Fully cross-platform where Python is available
+  - (Opinionated) Except for production, _"sometimes"_ a container _might_ be overkill
 
-# Other Virtual Environments: Conda
+<!--
+
+# Other Virtual Environment Tools: Conda, Spack,
 
 - conda ...
 
-<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-- Explain what is conda and how is different than python venv
-    - binary dependencies are bundled with the package
-- Explain conda/miniconda/micromamba clients
-- Example of creating a conda venv
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++- -->
+
+-->
+
+---
+layout: fact
 ---
 
-# Other Virtual Environments: Spack
+## Exercises
 
-- spack ...
-<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-- Explain what is conda and how is different than python venv
-    - binary dependencies are bundled with the package
-- Explain conda/miniconda/micromamba clients
-- Example of creating a conda venv
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++- -->
+Time to see it in action: Browse to
+
+<br />
+<a href="https://github.com/eth-cscs/swe4py">https://github.com/eth-cscs/swe4py</a>
+
+<br />
+<br />
+
+Open a code space and head to `exercises/1-1-getting-started`
+(need to be logged in)
+
+or
+
+Clone the repo & `cd swe4py/exercises/1-1-getting-started`
