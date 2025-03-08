@@ -687,7 +687,7 @@ Level 1: I never worry about breaking things
 </v-click>
 <v-click>
 
-Level 2: My intern never worries either
+Level 2: My new intern never worries either
 </v-click>
 <v-click>
 
