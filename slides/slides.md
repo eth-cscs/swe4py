@@ -62,6 +62,13 @@ hide: false
 <!-- Content here is ignored -->
 
 ---
+src: ./slides/2.2-python-patterns/section-slides.md
+hide: false
+---
+
+<!-- Content here is ignored -->
+
+---
 
 <!-- This allow you to embed external code blocks -->
 <<< @/snippets/python.py#snippet
