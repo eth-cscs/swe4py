@@ -62,19 +62,15 @@ hide: false
 <!-- Content here is ignored -->
 
 ---
-src: ./slides/2.2-python-patterns/section-slides.md
+src: ./slides/2.1-testing/section-slides.md
 hide: false
 ---
 
 <!-- Content here is ignored -->
 
 ---
-
-<!-- This allow you to embed external code blocks -->
-<<< @/snippets/python.py#snippet
-
----
-layout: end
+src: ./slides/2.2-python-patterns/section-slides.md
+hide: false
 ---
 
-The End
+<!-- Content here is ignored -->
