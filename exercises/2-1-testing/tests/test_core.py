@@ -1,5 +1,5 @@
 import pytest
-from project.core import count_vowels
+from src.project.core import count_vowels
 from operator import sub as substract
 
 def test_add():
@@ -15,11 +15,11 @@ def test_multiply():
     pass
 
 def test_divide():
-    from project.core import divide
+    from src.project.core import divide
     assert divide(2, 1) == 2
 
 def test_is_palindrome():
-    from project.core import is_palindrome
+    from src.project.core import is_palindrome
     assert is_palindrome("racecar")
     assert not is_palindrome("hello")
     assert is_palindrome("")
