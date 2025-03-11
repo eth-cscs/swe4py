@@ -220,21 +220,6 @@ sp --> pkgs["installed packages"]
 sp --> pth[".pth files"]
 ```
 
-```mermaid
-graph TD
-
-.venv/ --> bin/
-.venv/ --> lib/
-
-bin/ --> activate
-bin/ --> python["python -> /path/to/some/bin/python"]
-bin/ --> apps["installed apps"]
-
-lib/ --> sp["pythonX.Y/site-packages/"]
-sp --> pkgs["installed packages"]
-sp --> pth[".pth files"]
-```
-
 ---
 
 ## Anatomy Of A Package Install

@@ -137,7 +137,7 @@ The structs of the Python world: <a href="https://docs.python.org/3/library/data
 ````md magic-move
 ```python
 class Fruit:
-  __init__(self, fruit_type: str, color: str):
+  def __init__(self, fruit_type: str, color: str):
     self.fruit_type = fruit_type
     self.color = color
     if self.color == "brown" and not self.fruit_type == "coconut":
@@ -224,7 +224,12 @@ class Fruit:
 ---
 
 # Protocols
-
+````md magic-move
+```python
+def render(document: Document, renderer: Renderer):
+	if not isinstance(document, Document):  # optional depending on whether you expect your users to do static type checking in CI or not.
+		raise TypeError("'document' needs to implement the 'Document' protocoll documented here: ...")
+```
 ```python
 from typing import Protocol, runtime_checkable
 
@@ -246,6 +251,7 @@ def render(document: Document, renderer: Renderer):
 	if not isinstance(document, Document):  # optional depending on whether you expect your users to do static type checking in CI or not.
 		raise TypeError("'document' needs to implement the 'Document' protocoll documented here: ...")
 ```
+````
 
 ---
 
@@ -317,3 +323,4 @@ def function(path: str, field_storage: FileStorage, temporary: bool =False) -> B
 
   - Even better: use type hints and let tools (e.g. [Napoleon-sphinx](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/index.html)) to generate the documentation for you
 </v-click>
+````
