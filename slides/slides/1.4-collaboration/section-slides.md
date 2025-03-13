@@ -137,7 +137,7 @@ layout: fact
 
 ## Let's Fix This
 
-<a href="https://github.com/eth-cscs/swe4py">https://github.com/eth-cscs/swe4py</a>
+<a href="https://github.com/eth-cscs/swe4py">github.com/eth-cscs/swe4py</a>
 
 `exercises/1-4-collaboration/01-dependency-management`
 
@@ -216,7 +216,7 @@ $ uvx run mytool-main --from mytool
 ```
 
 ```bash
-$ uvx run mytool
+$ uvx mytool
 ```
 ````
 
@@ -466,7 +466,7 @@ layout: center
 
 Exercise time:
 
-<a href="https://github.com/eth-cscs/swe4py">https://github.com/eth-cscs/swe4py</a>
+<a href="https://github.com/eth-cscs/swe4py">github.com/eth-cscs/swe4py</a>
 
 `exercises/1-4-collaboration/04-interactivity`
 
@@ -524,8 +524,8 @@ class Foo:
 ### Interactivity: Got It? Keep It!
 
 1. Encode supported interactivity in Jupyter notebooks
-2. Use <a href="https://github.com/treebeardtech/nbmake">https://github.com/treebeardtech/nbmake</a>
-3. Check <a href="https://github.com/GridTools/gt4py">https://github.com/GridTools/gt4py</a> for an example
+2. Use <a href="https://github.com/treebeardtech/nbmake">github.com/treebeardtech/nbmake</a>
+3. Check <a href="https://github.com/GridTools/gt4py">github.com/GridTools/gt4py</a> for an example
 
 
 ---
@@ -582,11 +582,11 @@ Aren't we each defending the choice our IDE made for us anyway?
 
 <v-click>
 
-- Run a formatter (Ruff): <a href="https://docs.astral.sh/ruff/">https://docs.astral.sh/ruff/</a>
+- Run a formatter (Ruff): <a href="https://docs.astral.sh/ruff/">docs.astral.sh/ruff/</a>
 </v-click>
 <v-click>
 
-- On every commit locally (pre-commit): <a href="https://pre-commit.com">https://pre-commit.com</a>
+- On every commit locally (pre-commit): <a href="https://pre-commit.com">pre-commit.com</a>
 </v-click>
 <v-click>
 
@@ -609,11 +609,11 @@ Let your IDEs run wild!
 <br/>
 <v-click>
 
-- Run a linter (Ruff): <a href="https://docs.astral.sh/ruff/">https://docs.astral.sh/ruff/</a>
+- Run a linter (Ruff): <a href="https://docs.astral.sh/ruff/">docs.astral.sh/ruff/</a>
 </v-click>
 <v-click>
 
-- On every commit locally (pre-commit): <a href="https://pre-commit.com">https://pre-commit.com</a>
+- On every commit locally (pre-commit): <a href="https://pre-commit.com">pre-commit.com</a>
 </v-click>
 <v-click>
 
