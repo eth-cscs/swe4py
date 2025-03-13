@@ -48,7 +48,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}/slides
+      url: ${{ steps.deployment.outputs.page_url }}slides/
     needs: build
     runs-on: ubuntu-latest
     name: Deploy
