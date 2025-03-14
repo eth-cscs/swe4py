@@ -36,14 +36,14 @@ jobs:
         run: nci
 
       - name: Build
-        run: nr build --base /${{github.event.repository.name}}/slides/
+        run: nr build --base /${{github.event.repository.name}}/slides/ --out ../dist/slides
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: slides/dist
+          path: dist
 
   deploy:
     environment:
