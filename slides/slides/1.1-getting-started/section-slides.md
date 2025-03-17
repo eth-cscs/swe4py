@@ -2,7 +2,8 @@
 layout: section
 ---
 
-# Getting Started with Python: Basic environment configuration
+# Getting Started with Python: 
+## Basic environment configuration
 
 ---
 

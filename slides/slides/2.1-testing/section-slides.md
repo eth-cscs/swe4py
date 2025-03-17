@@ -896,7 +896,7 @@ layout: section
 </v-click>
 
 ---
-layout: end
+layout: center
 ---
 
 # End of Testing section

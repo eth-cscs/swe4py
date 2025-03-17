@@ -3,7 +3,7 @@ layout: section
 ---
 
 # Understanding Python for real:
-# objects, attributes and imports
+## objects, attributes and imports
 
 ---
 

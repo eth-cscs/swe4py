@@ -323,4 +323,3 @@ def function(path: str, field_storage: FileStorage, temporary: bool =False) -> B
 
   - Even better: use type hints and let tools (e.g. [Napoleon-sphinx](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/index.html)) to generate the documentation for you
 </v-click>
-````
