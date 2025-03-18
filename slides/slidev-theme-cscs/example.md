@@ -1,7 +1,10 @@
 ---
 theme: ./
 title: Presentation Title
-coverpic: building # formulae | machine | building
+---
+
+---
+layout: cover
 ---
 
 # Presentation Title
