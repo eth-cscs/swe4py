@@ -1,8 +1,9 @@
 ---
 addons:
  - slidev-addon-python-runner
-theme: seriph
-background: images/title-bg3.png
+theme: ./slidev-theme-cscs
+# theme: seriph
+# background: images/title-bg3.png
 # some information about your slides (markdown enabled)
 title: 'CSCS Course: Software Engineering Practices with Python'
 info: |
@@ -12,7 +13,7 @@ info: |
   Sources available at [GitHub (eth-cscs/swe4py)](https://github.com/eth-cscs/swe4py/)
 favicon: /images/cscs.ico
 # apply unocss classes to the current slide
-class: text-center
+# class: text-center
 # https://sli.dev/features/drawing
 drawings:
   persist: false
@@ -26,13 +27,15 @@ python:
 fonts:
   sans: Arial
   seriph: Arial
+  mono: Victor Mono
 lineNumbers: true
 ---
 
 # Software Engineering Practices with Python
 
-### ETH Zurich - Swiss National Supercomputing Centre (CSCS)
-### 10-11 March 2025. Zurich.
+Internal Course<br/>
+ETH Zurich - Swiss National Supercomputing Centre (CSCS)<br/>
+10-11 March 2025, Zurich<br/>
 
 ---
 src: ./slides/1.1-getting-started/section-slides.md
