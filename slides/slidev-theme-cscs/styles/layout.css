@@ -58,3 +58,7 @@
 .slidev-page .h-full .h-full {
   z-index: -1;
 }
+
+.logo {
+  z-index: -2;
+}
